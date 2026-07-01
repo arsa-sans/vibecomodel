@@ -1,5 +1,6 @@
 import os
 import sys
+import json
 
 # Fix Windows CP1252 encoding crash from PyTorch emoji log output
 os.environ["PYTHONIOENCODING"] = "utf-8"
@@ -10,6 +11,7 @@ import torch
 import onnx
 from src.utils.config import load_yaml
 from src.model.architecture import get_model_architecture
+from src.utils.labels import DEFAULT_CLASS_NAMES
 
 def main():
     print("Mengekspor model PyTorch ke ONNX...")
@@ -18,8 +20,7 @@ def main():
     model_cfg = load_yaml("configs/model.yaml")
     print(f"Menggunakan arsitektur model: {model_cfg['name']}")
     
-    # 7 classes (alphabetical order as per sorting JSON keys)
-    class_names = ['glass', 'hazardous', 'metal', 'organic', 'paper', 'plastic', 'textile']
+    class_names = DEFAULT_CLASS_NAMES
     num_classes = len(class_names)
     print(f"Kategori sampah ({num_classes} kelas): {class_names}")
     
@@ -65,7 +66,7 @@ def main():
         do_constant_folding=True,
         input_names=['input'],
         output_names=['output'],
-        dynamo=False,         # Force legacy exporter — PyTorch 2.12 new exporter min opset is 18
+        dynamo=False,
     )
     print("Ekspor ONNX selesai!")
     
@@ -84,6 +85,11 @@ def main():
     single_onnx_path = os.path.join(export_dir, "best_model_single.onnx")
     print(f"Menyimpan sebagai file ONNX tunggal di {single_onnx_path}...")
     onnx.save_model(onnx_model, single_onnx_path, save_as_external_data=False)
+
+    metadata_path = os.path.join(export_dir, "class_names.json")
+    with open(metadata_path, "w", encoding="utf-8") as fp:
+        json.dump(class_names, fp, indent=2)
+    print(f"Metadata kelas disimpan di {metadata_path}")
     
     # Replace original and remove external data
     print("Membersihkan file data eksternal...")

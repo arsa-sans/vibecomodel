@@ -17,6 +17,7 @@ else:
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse, HTMLResponse
 from PIL import Image
+from src.utils.labels import display_label
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
@@ -460,11 +461,13 @@ async def predict(file: UploadFile = File(...)):
             if os.path.exists(temp_path):
                 os.remove(temp_path)
             
+        raw_label = result.get("class", "unknown")
+        normalized_label = display_label(raw_label)
         return {
             "success": True,
             "prediction": {
-                "label": result['class'].replace('_', ' ').title(),
-                "raw_label": result['class'],
+                "label": normalized_label,
+                "raw_label": raw_label,
                 "confidence": round(result['confidence'] * 100, 2),
             },
             "intelligence": {
