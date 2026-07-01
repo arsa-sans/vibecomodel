@@ -1,0 +1,5 @@
+# Dataset parameters
+data_path: "datasets"
+img_size: 224
+num_workers: 0
+val_split: 0.2

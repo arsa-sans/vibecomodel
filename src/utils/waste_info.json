@@ -1,0 +1,44 @@
+{
+  "paper": {
+    "disposal_method": "Place clean paper in the paper recycling bin. Keep it dry and remove food residue.",
+    "recycling_ideas": "Turn into handmade crafts, notebooks, or packaging material.",
+    "environmental_impact": "Recycling paper saves trees and reduces landfill waste.",
+    "notes": "Soiled paper such as greasy boxes should go to organic waste or trash, not recycling."
+  },
+  "metal": {
+    "disposal_method": "Rinse metal items and place them in the metal recycling bin.",
+    "recycling_ideas": "Reuse for home decor, tools, or small DIY projects.",
+    "environmental_impact": "Metal recycling saves a lot of energy and reduces mining demand.",
+    "notes": "Make sure cans and containers are empty before recycling."
+  },
+  "organic": {
+    "disposal_method": "Compost organic waste or place it in the green waste bin.",
+    "recycling_ideas": "Use as compost fertilizer for plants and gardens.",
+    "environmental_impact": "Composting reduces methane emissions from landfills and enriches soil.",
+    "notes": "Avoid mixing with plastic or hazardous waste."
+  },
+  "hazardous": {
+    "disposal_method": "Bring hazardous waste to a designated collection point or hazardous waste facility.",
+    "recycling_ideas": "Some components may be safely recovered through special recycling programs.",
+    "environmental_impact": "Improper disposal can pollute soil, water, and air.",
+    "notes": "Do not put hazardous waste in regular bins."
+  },
+  "textile": {
+    "disposal_method": "Donate wearable items or send damaged textiles to textile recycling.",
+    "recycling_ideas": "Reuse as cleaning cloths, bags, or patchwork crafts.",
+    "environmental_impact": "Textile recycling reduces landfill waste and saves resources.",
+    "notes": "Clean and dry textiles before disposal or donation."
+  },
+  "glass": {
+    "disposal_method": "Place clean glass in the glass recycling bin.",
+    "recycling_ideas": "Reuse as jars, containers, or decorative items.",
+    "environmental_impact": "Recycling glass saves raw materials and energy.",
+    "notes": "Separate broken glass carefully and follow local disposal rules."
+  },
+  "plastic": {
+    "disposal_method": "Use the plastic recycling bin if accepted by local facilities.",
+    "recycling_ideas": "Reuse bottles and packaging for storage or crafts.",
+    "environmental_impact": "Plastic recycling reduces pollution, but reuse is better than recycling.",
+    "notes": "Empty and rinse containers before recycling."
+  }
+}

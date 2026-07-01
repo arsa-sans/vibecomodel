@@ -1,0 +1,16 @@
+# Training parameters
+batch_size: 32
+lr: 0.001
+epochs: 100
+optimizer: "adam"
+scheduler: "reduce_lr_on_plateau"
+loss: "cross_entropy"
+weight_decay: 0.0001
+early_stop_patience: 10
+seed: 42
+use_amp: true
+grad_clipping: true
+grad_clip_max_norm: 1.0
+save_freq: 5
+output_path: "models/checkpoints"
+log_dir: "outputs/logs"

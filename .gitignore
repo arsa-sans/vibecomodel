@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+outputs/logs/*
+outputs/plots/*
+outputs/reports/*
+models/checkpoints/*
+data/processed/*
+.ipynb_checkpoints/
+.env
+venv/
