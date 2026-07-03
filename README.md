@@ -44,7 +44,7 @@ modeleco/
 ### 2. Instalasi & Setup Environment
 
 ```powershell
-# Buka terminal di folder project (D:\modeleco)
+# Buka terminal di folder project
 # Buat virtual environment baru
 python -m venv venv
 
